@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador One</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img class="header_logo" src="/imagenes/alura.svg" alt="Logo de Alura">
+        </div>
+    </header>
+
+    <main>
+        <div class="main">
+            <div class="left">
+                <textarea id="ingresoTexto" class="ingreso_texto" placeholder="Ingrese el texto aquí"></textarea>
+                <div class="left_footer">
+                    <img src="./imagenes/!.svg" alt="Icono de advertencia">
+                    <p class="left_advertencia">Solo letras minúsculas y sin acentos</p>
+                    <div class="left_botones">
+                        <button id="botonEncriptar" class="boton_encriptar">Encriptar</button>
+                        <button id="botonDesencriptar" class="boton_desencriptar">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+            <div id="rigth" class="rigth">
+                <img id="munheco" class="munheco" src="./imagenes/munheco.svg" alt="Muñeco">
+                <textarea id="mensajeFinal" class="mensaje_final" placeholder="Ningún mensaje fue encontrado"></textarea>
+                <p id="mensajeInfo" class="mensaje_info">Ingrese el texto que desea encriptar o desencriptar</p>
+                <button id="botonCopiar" class="boton_copiar oculto">Copiar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <p>© 2024 Encriptador AluraLatam. Todos los derechos reservados. by <a href="https://github.com/jamzlibra" style="color: white;">JamzLibra</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
