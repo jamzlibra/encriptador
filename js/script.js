@@ -1,3 +1,4 @@
+// Variables globales
 const ingresoTexto = document.getElementById("ingresoTexto");
 const botonEncriptar = document.getElementById("botonEncriptar");
 const botonDesencriptar = document.getElementById("botonDesencriptar");
@@ -64,9 +65,18 @@ ingresoTexto.addEventListener("input", () => {
 
 // Función para mostrar una alerta como un cuadro de texto
 function mostrarAlerta(tipo, mensaje) {
+    // Verificar si ya existe una alerta del mismo tipo
+    const alertaExistente = document.querySelector(`.alerta-${tipo}`);
+    if (alertaExistente) {
+        // Si ya existe, actualizar el mensaje y salir de la función
+        alertaExistente.textContent = mensaje;
+        return;
+    }
+
     // Crear elemento div para la alerta
     const alerta = document.createElement("div");
     alerta.classList.add("alerta"); // Aplicar clase de estilo para la alerta según el tipo
+    alerta.classList.add(`alerta-${tipo}`); // Aplicar clase de estilo específico según el tipo
 
     // Agregar el mensaje de texto al contenido del div
     alerta.textContent = mensaje;
@@ -78,16 +88,7 @@ function mostrarAlerta(tipo, mensaje) {
     alertasContainer.classList.remove("oculto");
 
     // Mostrar la imagen de la alerta según el tipo
-    if (tipo === "advertencia") {
-        mostrarImagenAlerta("alertaadvertencia.svg");
-    } else if (tipo === "exito") {
-        mostrarImagenAlerta("alertabien.svg");
-    } else if (tipo === "error") {
-        mostrarImagenAlerta("alertaerror.svg");
-    }
-
-    // Asignar clase de estilo según el tipo de alerta
-    alerta.classList.add(`alerta-${tipo}`);
+    mostrarImagenAlerta(`alerta${tipo}.svg`);
 
     // Eliminar la alerta después de 3 segundos
     setTimeout(() => {
