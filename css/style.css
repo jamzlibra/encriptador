@@ -285,8 +285,9 @@ header {}
 
     .footer {
         margin-top: auto;
-        padding: 15px 0; /* Reducir el espaciado superior e inferior */
+        padding: 10px 0; /* Reducir el espaciado superior e inferior */
         z-index: 1; /* Ajustar el z-index para que el footer esté detrás de otros elementos */
+        font-size: 10px;
     }
 
     .social-media a {
