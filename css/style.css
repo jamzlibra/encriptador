@@ -1,33 +1,34 @@
-/*variables*/
-:root{
+/* Estilos generales */
+:root {
     --color-blue: #0a3871;
     --color-skyblue: #F3F5FC;
     --color-gris: #D8DFE8;
-
-
-    --color--background: var(--color-skyblue)
+    --color-error: #ffcccc; /* Fondo rojo para alertas de error */
 }
 
-body{
-        background: #F3F5FC;
-        /*background: var(--color--background);*/
-        font-family: 'Inter', sans-serif;
-}
-textarea{
+body {
+    background: #F3F5FC;
     font-family: 'Inter', sans-serif;
 }
-/* Configuracion del header*/
-header{
+
+textarea {
+    font-family: 'Inter', sans-serif;
 }
-.header{
+
+/* Configuración del header */
+header {}
+
+.header {
     width: 90%;
     margin: auto;
 }
-.header_logo{
+
+.header_logo {
     margin-top: 40px;
 }
-/* Configuracion del Main */
-.main{
+
+/* Configuración del Main */
+.main {
     width: 80.5%;
     margin: auto 40px auto auto;
     display: grid;
@@ -35,46 +36,54 @@ header{
     min-height: calc(100vh - 91px - 72px);
     align-items: end;
 }
-/*left*/
-.left{
+
+/* Left */
+.left {
     height: 85%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.ingreso_texto{
+
+.ingreso_texto {
     width: 80%;
     font-size: 32px;
+    flex-grow: 1;
     color: #0a3871;
-    /*color: var(--color-blue);*/
     background: none;
     resize: none;
     border: none;
     outline: none;
 }
-.ingreso_texto::placeholder{
+
+.ingreso_texto::placeholder {
     color: #0a3871;
-    /*color: var(--color-blue);*/
 }
-.left_footer{
+
+.left_footer {
+
 }
-.left_advertencia{
+
+.left_advertencia {
     display: inline-block;
     color: #495057;
 }
-.left_botones{
+
+.left_botones {
     display: flex;
-	justify-content: space-evenly;
-	padding: .8rem;
-	flex-wrap: wrap;
-	gap: .8rem;
+    justify-content: space-evenly;
+    padding: .8rem;
+    flex-wrap: wrap;
+    gap: .8rem;
     display: flex;
     justify-content: space-evenly;
     grid-area: 24px;
     margin-top: 16px;
-    /*gap: 10px;*/
 }
-.boton_encriptar, .boton_desencriptar, .boton_copiar{
+
+.boton_encriptar,
+.boton_desencriptar,
+.boton_copiar {
     border: 1px solid var(--color-blue);
     cursor: pointer;
     max-width: 328px;
@@ -83,19 +92,18 @@ header{
     font-size: 16px;
     border-radius: 24px;
 }
-.boton_encriptar{
-    /*margin-right: 10px;*/
+
+.boton_encriptar {
     background-color: #0a3871;
     color: white;
-    /*background-color: var(--color-blue);*/
 }
-.boton_desencriptar{
+
+.boton_desencriptar {
     background-color: #D8DFE8;
     color: #0a3871;
-    /*color: var(--color-blue);
-    background-color: var(--color-gris);*/
 }
-.rigth{
+
+.rigth {
     background-color: #FFFFFF;
     height: calc(100% + 48px);
     border-radius: 32px;
@@ -108,17 +116,20 @@ header{
     align-items: center;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
-.rigth.ajustar{
+
+.rigth.ajustar {
     justify-content: space-between;
-    
 }
-.munheco{
+
+.munheco {
     width: 100%;
 }
-.oculto{
+
+.oculto {
     display: none;
 }
-.mensaje_final{
+
+.mensaje_final {
     background: none;
     border: none;
     outline: none;
@@ -127,35 +138,45 @@ header{
     font-weight: bold;
     font-size: 24px;
 }
-.mensaje_final.ajustar{
+
+.mensaje_final.ajustar {
     text-align: left;
     font-weight: lighter;
     height: 80%;
 }
-.mensaje_info{
-     font-size: 16px;
+
+.mensaje_info {
+    font-size: 16px;
     color: #495057;
     text-align: center;
 }
-.boton_copiar{
+
+.boton_copiar {
     width: 100%;
     background: transparent;
 }
+
 /* Footer */
 .footer {
-    position: fixed; /* Fijar el footer */
-    bottom: 0; /* Colocar el footer en la parte inferior */
-    width: 100%; /* Utilizar el 100% del ancho */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #0a3871;
     color: white;
     padding: 20px 0;
     text-align: center;
-    z-index: 1000; /* Asegurar que el footer esté por encima del contenido */
+    z-index: 1000;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-media a {
@@ -169,34 +190,94 @@ header{
     color: #ffc107;
 }
 
-@media screen and (max-width: 800px){
-    .main{
-            grid-template-columns: 1fr;
-            grid-template-rows: 75% auto;
-            width: auto;
-            margin: auto 40px;
+/* Estilos para el contenedor de alertas */
+.alertas-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 20px;
+    border-radius: 1px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+}
+
+.alerta-contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.alerta-imagen {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    display: inline; /* Mostrar la imagen */
+}
+
+.alerta {
+    background-color: var(--color-error);
+    color: #800000;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.alerta-exito {
+    background-color: #ccffcc;
+    color: #008000;
+}
+
+.alerta-advertencia {
+    background-color: #ffffcc;
+    color: #808000;
+}
+
+/* Ocultar las imágenes y el texto por defecto */
+.alerta-imagen,
+.alerta-texto {
+    display: none;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 800px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 75% auto;
+        width: auto;
+        margin: auto 40px;
     }
-    .rigth{
+
+    .rigth {
         height: 100%;
     }
-        .left_botones{
+
+    .left_botones {
         justify-content: center;
     }
-        .boton_encriptar, .boton_desencriptar{
+
+    .boton_encriptar,
+    .boton_desencriptar {
         width: 45%;
     }
-    .munheco{
+
+    .munheco {
         display: none;
     }
 }
-@media screen and (max-width:500px){
-    .main{
+
+@media screen and (max-width: 500px) {
+    .main {
         margin: auto 16px;
     }
-    .boton_encriptar, .boton_desencriptar{
+
+    .boton_encriptar,
+    .boton_desencriptar {
         max-width: none;
         width: 100%;
     }
+
     .footer {
         padding: 15px 0; /* Reducir el espaciado superior e inferior */
     }
@@ -206,6 +287,3 @@ header{
         margin: 0 4px; /* Reducir aún más el margen entre los iconos */
     }
 }
-
-   
-

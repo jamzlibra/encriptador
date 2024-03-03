@@ -33,12 +33,24 @@ intentare realizar otro encriptador con mejoras y ocupando otro tipo de cifrado
 
 Este algoritmo de sustitución reemplaza cada ocurrencia de las letras especificadas por su respectivo valor asignado.
 
-### Registro de versiones:
-#### Version 1.00
-- Versión 1.0.0 (29/02/2024): Implementación inicial de la funcionalidad básica de encriptación y desencriptación de texto.
+## Registro de versiones:
+### Version 2.0.0
+- **Versión 2.0.0** (03/03/2024): Implementación de mejoras y correcciones:
+  - Se agregó funcionalidad para mostrar mensajes de alerta personalizados.
+  - Se ajustaron los estilos CSS para adaptar la página a dispositivos móviles.
+  - Se añadieron imágenes de alerta para diferentes tipos de mensajes.
+  - Se corrigieron errores relacionados con la visualización de la imagen de alerta.
+  - Se modificaron los colores de las alertas según su tipo (éxito, advertencia, error).
+  - Se agregaron mensajes de confirmación para mostrar cuando se encripta o desencripta el texto.
+  - Se añadieron restricciones de entrada para permitir solo letras minúsculas y espacios.
+  - Se mejoró el diseño y la disposición de los elementos en la página.
+  - Se optimizó el código JavaScript para mejorar el rendimiento y la legibilidad.
+  - Se actualizó el diseño responsivo para garantizar una experiencia consistente en dispositivos móviles.
+  - Se agregó el uso de la propiedad `flex-grow` para que el textarea ocupe el área restante en altura en dispositivos móviles.
 
-- Versión 1.0.1 (02/02/2024): Mejorando aspectos visuales para equipos con pantallas menores a 500px
+### Versiones anteriores:
+- **Versión 1.0.0** (29/02/2024): Implementación inicial de la funcionalidad básica de encriptación y desencriptación de texto.
+- **Versión 1.0.1** (02/02/2024): Mejora de aspectos visuales para dispositivos con pantallas menores a 500px.
 
 ## Autor
-
 - [Julio Macias](https://github.com/jamzlibra)

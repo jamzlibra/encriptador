@@ -6,6 +6,7 @@ const mensajeFinal = document.getElementById("mensajeFinal");
 const munheco = document.getElementById("munheco");
 const mensajeInfo = document.getElementById("mensajeInfo");
 const rigth = document.getElementById("rigth");
+const alertasContainer = document.getElementById("alertas-container"); // Contenedor de alertas
 
 // Definir matriz de reemplazo
 const remplazar = [
@@ -52,14 +53,67 @@ function desencriptar(newText) {
 // Evento de input para verificar el texto ingresado
 ingresoTexto.addEventListener("input", () => {
     const textoIngresado = ingresoTexto.value;
-    const regex = /^[a-z]*$/; // Expresión regular para verificar si solo hay letras minúsculas
+    const regex = /^[a-z\s]*$/; // Expresión regular para permitir solo letras minúsculas y espacios
 
     if (!regex.test(textoIngresado)) {
-        alert("Por favor, ingrese solo letras minúsculas.");
-        // Eliminar los caracteres no permitidos (mayúsculas y números)
-        ingresoTexto.value = textoIngresado.replace(/[^a-z]/g, "");
+        mostrarAlerta("error", "Por favor, ingrese solo letras minúsculas y espacios.");
+        // Eliminar los caracteres no permitidos (mayúsculas, números y símbolos)
+        ingresoTexto.value = textoIngresado.replace(/[^a-z\s]/g, "");
     }
 });
+
+// Función para mostrar una alerta como un cuadro de texto
+function mostrarAlerta(tipo, mensaje) {
+    // Crear elemento div para la alerta
+    const alerta = document.createElement("div");
+    alerta.classList.add("alerta"); // Aplicar clase de estilo para la alerta según el tipo
+
+    // Agregar el mensaje de texto al contenido del div
+    alerta.textContent = mensaje;
+
+    // Agregar la alerta al contenedor de alertas
+    alertasContainer.appendChild(alerta);
+
+    // Mostrar el contenedor de alertas
+    alertasContainer.classList.remove("oculto");
+
+    // Mostrar la imagen de la alerta según el tipo
+    if (tipo === "advertencia") {
+        mostrarImagenAlerta("alertaadvertencia.svg");
+    } else if (tipo === "exito") {
+        mostrarImagenAlerta("alertabien.svg");
+    } else if (tipo === "error") {
+        mostrarImagenAlerta("alertaerror.svg");
+    }
+
+    // Asignar clase de estilo según el tipo de alerta
+    alerta.classList.add(`alerta-${tipo}`);
+
+    // Eliminar la alerta después de 3 segundos
+    setTimeout(() => {
+        alerta.remove();
+        // Ocultar el contenedor de alertas si no hay más alertas
+        if (alertasContainer.childElementCount === 0) {
+            alertasContainer.classList.add("oculto");
+        }
+        // Ocultar la imagen de la alerta
+        ocultarImagenAlerta();
+    }, 3000);
+}
+
+// Función para mostrar la imagen de alerta
+function mostrarImagenAlerta(imagenSrc) {
+    const alertaImagen = document.getElementById("alertaImagen");
+    alertaImagen.src = `./imagenes/${imagenSrc}`;
+    alertaImagen.alt = "Alerta";
+    alertaImagen.style.display = "block";
+}
+
+// Función para ocultar la imagen de alerta
+function ocultarImagenAlerta() {
+    const alertaImagen = document.getElementById("alertaImagen");
+    alertaImagen.style.display = "none";
+}
 
 // Evento de clic en el botón "Encriptar"
 botonEncriptar.addEventListener("click", () => {
@@ -67,12 +121,14 @@ botonEncriptar.addEventListener("click", () => {
 
     // Validar si se ha ingresado texto
     if (textoIngresado.trim() === "") {
-        alert("Por favor, ingrese un texto antes de encriptar.");
+        mostrarAlerta("advertencia", "Por favor, ingrese un texto antes de encriptar.");
         return;
     }
 
     // Encriptar el texto ingresado y mostrar el resultado
-    remplace(encriptar(textoIngresado));
+    const textoEncriptado = encriptar(textoIngresado);
+    remplace(textoEncriptado);
+    mostrarAlerta("exito", "Texto encriptado correctamente.");
 });
 
 // Evento de clic en el botón "Desencriptar"
@@ -81,19 +137,21 @@ botonDesencriptar.addEventListener("click", () => {
 
     // Validar si se ha ingresado texto
     if (textoIngresado.trim() === "") {
-        alert("Por favor, ingrese un texto antes de desencriptar.");
+        mostrarAlerta("advertencia", "Por favor, ingrese un texto antes de desencriptar.");
         return;
     }
 
     // Desencriptar el texto ingresado y mostrar el resultado
-    remplace(desencriptar(textoIngresado));
+    const textoDesencriptado = desencriptar(textoIngresado);
+    remplace(textoDesencriptado);
+    mostrarAlerta("exito", "Texto desencriptado correctamente.");
 });
 
 // Evento de clic en el botón "Copiar"
 botonCopiar.addEventListener("click", () => {
     let texto = mensajeFinal.innerHTML;
     navigator.clipboard.writeText(texto);
-    alert("Texto copiado al portapapeles correctamente.");
+    mostrarAlerta("exito", "Texto copiado al portapapeles correctamente.");
 
     // Restaurar valores y estilos después de copiar
     mensajeFinal.innerHTML = "";
