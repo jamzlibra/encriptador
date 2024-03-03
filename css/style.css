@@ -143,27 +143,30 @@ header{
 }
 /* Footer */
 .footer {
+    position: fixed; /* Fijar el footer */
+    bottom: 0; /* Colocar el footer en la parte inferior */
+    width: 100%; /* Utilizar el 100% del ancho */
     background-color: #0a3871;
     color: white;
     padding: 20px 0;
     text-align: center;
-    font-size: 14px; /* Tamaño de fuente reducido para dispositivos móviles */
+    z-index: 1000; /* Asegurar que el footer esté por encima del contenido */
 }
 
 .footer-content {
-    max-width: 100%; /* Utilizar el 100% del ancho disponible */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .social-media a {
     color: white;
-    font-size: 20px; /* Tamaño de fuente reducido para dispositivos móviles */
-    margin: 0 8px; /* Reducir el margen entre los iconos */
+    font-size: 24px;
+    margin: 0 10px;
     text-decoration: none;
 }
 
 .social-media a:hover {
-    color: #ffc107; /* Cambia el color al pasar el mouse sobre los iconos */
+    color: #ffc107;
 }
 
 @media screen and (max-width: 800px){
