@@ -141,22 +141,24 @@ header{
     width: 100%;
     background: transparent;
 }
+/* Footer */
 .footer {
     background-color: #0a3871;
     color: white;
     padding: 20px 0;
     text-align: center;
+    font-size: 14px; /* Tamaño de fuente reducido para dispositivos móviles */
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 100%; /* Utilizar el 100% del ancho disponible */
     margin: 0 auto;
 }
 
 .social-media a {
     color: white;
-    font-size: 24px;
-    margin: 0 10px;
+    font-size: 20px; /* Tamaño de fuente reducido para dispositivos móviles */
+    margin: 0 8px; /* Reducir el margen entre los iconos */
     text-decoration: none;
 }
 
@@ -192,6 +194,15 @@ header{
         max-width: none;
         width: 100%;
     }
+    .footer {
+        padding: 15px 0; /* Reducir el espaciado superior e inferior */
+    }
+
+    .social-media a {
+        font-size: 16px; /* Tamaño de fuente aún más reducido para dispositivos móviles */
+        margin: 0 4px; /* Reducir aún más el margen entre los iconos */
+    }
 }
+
    
 
