@@ -41,8 +41,7 @@ function encriptar(newText) {
 
 // Función para desencriptar el texto ingresado
 function desencriptar(newText) {
-    newText = newText.toLowerCase(); // Convertir a minúsculas
-    for (let i = 0; i < remplazar.length; i++) {
+    for (let i = remplazar.length - 1; i >= 0; i--) {
         if (newText.includes(remplazar[i][1])) {
             newText = newText.replaceAll(remplazar[i][1], remplazar[i][0]);
         }
