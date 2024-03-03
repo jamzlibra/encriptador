@@ -34,7 +34,7 @@ intentare realizar otro encriptador con mejoras y ocupando otro tipo de cifrado
 Este algoritmo de sustitución reemplaza cada ocurrencia de las letras especificadas por su respectivo valor asignado.
 
 ### Registro de versiones:
-### Version 1.00
+#### Version 1.00
 - Versión 1.0.0 (29/02/2024): Implementación inicial de la funcionalidad básica de encriptación y desencriptación de texto.
 
 - Versión 1.0.1 (02/02/2024): Mejorando aspectos visuales para equipos con pantallas menores a 500px
