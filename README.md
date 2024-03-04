@@ -58,7 +58,6 @@ Este algoritmo de sustitución reemplaza cada ocurrencia de las letras especific
   - Se actualizó el diseño responsivo para garantizar una experiencia consistente en dispositivos móviles.
   - Se agregó el uso de la propiedad `flex-grow` para que el textarea ocupe el área restante en altura en dispositivos móviles.
 
-### Versiones anteriores:
 - **Versión 1.0.0** (29/02/2024): Implementación inicial de la funcionalidad básica de encriptación y desencriptación de texto.
 - **Versión 1.0.1** (02/02/2024): Mejora de aspectos visuales para dispositivos con pantallas menores a 500px.
 
