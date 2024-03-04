@@ -34,7 +34,17 @@ intentare realizar otro encriptador con mejoras y ocupando otro tipo de cifrado
 Este algoritmo de sustitución reemplaza cada ocurrencia de las letras especificadas por su respectivo valor asignado.
 
 ## Registro de versiones:
-### Version 2.0.0
+### Version 2.0.1
+- **Versión 2.0.1** (03/03/2024): Mejoras y correcciones:
+  - Implementación de la función `mostrarAlerta()` para mostrar mensajes de alerta personalizados y evitar la repetición de alertas del mismo tipo.
+  - Actualización de la visualización de imágenes de alerta según el tipo de mensaje.
+  - Ajustes en el diseño CSS para mejorar la adaptabilidad en dispositivos móviles.
+  - Mejora en la validación de entrada para permitir solo letras minúsculas y espacios.
+  - Optimización del código JavaScript para mejorar el rendimiento y la legibilidad.
+  - Actualización del diseño responsivo para garantizar una experiencia consistente en dispositivos móviles.
+  - Uso de la propiedad `flex-grow` para que el textarea ocupe el área restante en altura en dispositivos móviles.
+
+### Versiones anteriores
 - **Versión 2.0.0** (03/03/2024): Implementación de mejoras y correcciones:
   - Se agregó funcionalidad para mostrar mensajes de alerta personalizados.
   - Se ajustaron los estilos CSS para adaptar la página a dispositivos móviles.
