@@ -158,14 +158,14 @@ header {}
 
 /* Footer */
 .footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #0a3871;
     color: white;
     padding: 20px 0;
     text-align: center;
-    z-index: 1000;
+    /*z-index: 1000;*/
 }
 
 .footer-content {
